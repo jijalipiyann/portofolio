@@ -59,11 +59,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
-
     z-index: 1000;
-
     padding: 18px 8%;
 }
 
@@ -160,6 +157,14 @@ header {
     width: 70%;
 }
 
+/* MENU AKTIF */
+.nav-menu a.active {
+    color: var(--pink-dark);
+}
+
+.nav-menu a.active::after {
+    width: 70%;
+}
 
 /* =====================================================
    GENERAL SECTION
@@ -334,6 +339,49 @@ section {
     font-size: 15px;
 
     margin-bottom: 30px;
+}
+
+/* =====================================================
+   HOME SOCIAL MEDIA
+===================================================== */
+
+.home-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.home-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+    border: 1.5px solid rgba(216, 117, 161, 0.25);
+
+    color: var(--pink);
+
+    font-size: 19px;
+
+    box-shadow: 0 8px 20px rgba(190, 91, 132, 0.10);
+
+    transition: 0.3s ease;
+}
+
+.home-social a:hover {
+    transform: translateY(-5px);
+
+    background: var(--pink);
+
+    color: white;
+
+    box-shadow: 0 12px 25px rgba(190, 91, 132, 0.20);
 }
 
 
@@ -1532,20 +1580,17 @@ section {
 
 .sertifikat-card {
     width: 800px;
-
     max-width: 90%;
-
     padding: 14px;
+    padding-bottom: 24px;
 
     background: white;
-
     border-radius: 25px;
 
     box-shadow:
         0 20px 50px rgba(190, 91, 132, 0.15);
 
     transform: rotate(-1deg);
-
     transition: 0.4s ease;
 
     position: relative;
@@ -1608,6 +1653,31 @@ section {
     border-radius: 15px;
 
     display: block;
+}
+/* DESKRIPSI SERTIFIKAT */
+
+.sertifikat-info {
+    text-align: center;
+    padding: 18px 20px 5px;
+}
+
+.sertifikat-info h3 {
+    margin: 0 0 7px;
+
+    color: #3d3037;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sertifikat-info p {
+    margin: 0 auto;
+
+    max-width: 600px;
+
+    color: #8a6f7b;
+    font-size: 13px;
+    line-height: 1.7;
+    font-weight: 400;
 }
 
 
@@ -2050,6 +2120,123 @@ section {
     letter-spacing: 0.5px;
 }
 
+
+/* =====================================================
+   PROJECT IMAGE POPUP
+===================================================== */
+
+.project-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(45, 35, 40, 0.65);
+
+    backdrop-filter: blur(8px);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.project-modal.show {
+    display: flex;
+}
+
+.project-modal-content {
+    position: relative;
+
+    max-width: 950px;
+    max-height: 90vh;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 70px rgba(190, 91, 132, 0.3);
+}
+
+.project-modal-content img {
+    display: block;
+
+    max-width: 100%;
+    max-height: 82vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+}
+
+.project-modal-close {
+    position: absolute;
+
+    top: -15px;
+    right: -15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--pink);
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-shadow:
+        0 8px 20px rgba(190, 91, 132, 0.3);
+
+    transition: 0.3s ease;
+}
+
+.project-modal-close:hover {
+    background: var(--pink-dark);
+    transform: rotate(90deg);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .project-modal {
+        padding: 20px;
+    }
+
+    .project-modal-content {
+        max-width: 100%;
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .project-modal-content img {
+        max-height: 75vh;
+        border-radius: 12px;
+    }
+
+    .project-modal-close {
+        width: 35px;
+        height: 35px;
+
+        top: -10px;
+        right: -10px;
+
+        font-size: 21px;
+    }
+}
 
 /* =====================================================
    ANIMASI DEKORASI

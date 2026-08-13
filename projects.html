@@ -105,9 +105,11 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                     <a href="project login/index.php"
-                    class="project-btn"
-                    target="_blank">View Project →</a>
+                    <a href="javascript:void(0);"
+class="project-btn"
+onclick="openProjectImage('assets/login.png');">
+    View Project →
+</a>
                 </div>
             </div>
 
@@ -129,23 +131,30 @@
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="assets/java.png" alt="Project 3">
-                </div>
-                <div class="project-content">
-                    <h3>Project Java – Pengolahan Nilai Siswa</h3>
-                    <p>Program Java untuk input dan pengolahan data nilai siswa.</p>
-                    <div class="project-tags">
-                        <span>Java</span>
-                        <span>MySQL</span>
-                    </div>
-                    <a href="javascript:void(0)" class="project-btn">
-                    View Project →
-                    </a>
-                </div>
-            </div>
         </div>
+        </div>
+
+<!-- PROJECT PREVIEW -->
+<div id="projectModal" class="project-modal">
+
+    <div class="project-modal-content">
+
+        <button class="project-modal-close"
+                onclick="closeProjectImage()">
+            &times;
+        </button>
+
+        <img id="projectPreview"
+             src=""
+             alt="Project Preview">
+
+    </div>
+
+</div>
+
+</section>
+
+<footer>
     </section>
 
     <footer>

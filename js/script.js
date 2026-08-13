@@ -254,30 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // =================================================
-    // 8. PROJECT BUTTON
-    // =================================================
-
-    const projectButtons = document.querySelectorAll(".project-btn");
-
-    projectButtons.forEach((button) => {
-
-        button.addEventListener("click", (event) => {
-
-            const link = button.getAttribute("href");
-
-            if (link === "#" || !link) {
-                event.preventDefault();
-
-                alert(
-                    "Project ini belum memiliki link. " +
-                    "Silakan tambahkan link project kamu terlebih dahulu 😊"
-                );
-            }
-
-        });
-
-    });
+    
 
 
     // =================================================
@@ -360,4 +337,61 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    function openProjectImage(button) {
+
+    // Ambil kartu project tempat tombol berada
+    const card = button.closest(".project-card");
+
+    // Ambil gambar yang sudah tampil di kartu
+    const image = card.querySelector(".project-image img");
+
+    // Ambil popup
+    const modal = document.getElementById("projectModal");
+
+    // Ambil gambar di dalam popup
+    const preview = document.getElementById("projectPreview");
+
+    if (!image || !modal || !preview) {
+        return;
+    }
+
+    // Masukkan gambar kartu ke popup
+    preview.src = image.src;
+
+    // Tampilkan popup
+    modal.classList.add("show");
+}
+
+
+function closeProjectImage() {
+
+    const modal = document.getElementById("projectModal");
+
+    if (modal) {
+        modal.classList.remove("show");
+    }
+}
+
+
+// Klik area luar gambar
+document.addEventListener("click", function(event) {
+
+    const modal = document.getElementById("projectModal");
+
+    if (event.target === modal) {
+        closeProjectImage();
+    }
+
+});
+
+
+// Tekan ESC
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeProjectImage();
+    }
+
+});
 });
